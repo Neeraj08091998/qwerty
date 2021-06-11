@@ -15,8 +15,8 @@ pipeline {
                 // Run Maven on a Unix agent.
                 
               
-                
-                bat "mvn clean install"               
+                echo "hello"
+                            
 
                 // To run Maven on a Windows agent, use
                 
