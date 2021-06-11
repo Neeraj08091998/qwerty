@@ -24,15 +24,9 @@ pipeline {
 
             
         }
- stage('build && SonarQube analysis') {
+ stage('SonarQube analysis 2') {
             steps {
-                withSonarQubeEnv('sonar') {
-                    // Optionally use a Maven environment you've configured already
-                    withMaven(maven:'Maven3') {
-                        sh 'mvn clean package sonar:sonar'
-                    }
-                }
+                sh 'gradle sonarqube'
             }
-        }
     }
 }
