@@ -1,3 +1,4 @@
+  
 pipeline {
     agent any
 
@@ -7,29 +8,13 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/mndp1234/todo-app.git'
-
-                // Run Maven on a Unix agent.
-                
-                bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                
-                bat "mvn clean install"               
-
-                // To run Maven on a Windows agent, use
-                
-            }
-
-            
-        }
+        
 stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv('sonar') {
+                withSonarQubeEnv('sq') {
                  
-                   sh 'mvn sonar:sonar' 
-                    sh 'cat target/sonar/report-task.txt'
+                  bat 'mvn sonar:sonar -Dsonar.login=a9f1b2f450793f58d6ced555e121235e36e4c0d3 -D.host.url=http://localhost:9000/ ' 
+                   
                        
                     }
                 }
