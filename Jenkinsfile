@@ -27,7 +27,7 @@ pipeline {
         stage('deloy to tomcat') {
             steps {
                
-              bat 'scp -o StrictHostKeyChecking=no target/*.war navdeep@127.0.0.1:D:/neeraj -p 22'
+              bat 'scp -o StrictHostKeyChecking=no target/*.war deployer@127.0.0.1:**/*war'
                 }
             }        
         }
