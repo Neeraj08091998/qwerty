@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mtodo</groupId>
 	<artifactId>todo-app</artifactId>
-	<packaging>war</packaging>
+
 	<version>0.0.1-SNAPSHOT</version>
 	<name>todo-app Maven Webapp</name>
 	<url>http://maven.apache.org</url>
