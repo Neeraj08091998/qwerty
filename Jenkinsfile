@@ -27,7 +27,7 @@ pipeline {
         stage('deloy to tomcat') {
             steps {
                
-              sh 'scp -o StrictHostKeyChecking=no target/*.war deployer@127.0.0.1:C:/Program Files/Apache Software Foundation/Tomcat 8.5/webapps/'
+              bat 'scp -o StrictHostKeyChecking=no target/*.war navdeep@127.0.0.1:D:/Portable IDM'
                 }
             }        
         }
