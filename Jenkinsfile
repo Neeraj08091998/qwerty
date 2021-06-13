@@ -27,8 +27,7 @@ pipeline {
         stage('deloy to tomcat') {
             steps {
                
-                sshagent(['tomcat']){
-                    bat 'scp -o StrictHostKeyChecking=no target/*.war deployer@127.0.0.1:C:/ProgramFiles/ApacheSoftwareFoundation/Tomcat8.5/webapps/todo-app/todo-app.war'
+                deploy adapters: [tomcat(credentialsid: 'deployer', path: '', url: 'http://localhost:8081')]' contextPath: null,war: '88/8.war'
                 }
             }        
         }
