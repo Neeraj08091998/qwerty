@@ -28,7 +28,7 @@ pipeline {
             steps {
                
                 sshagent(['tomcat']){
-                    bat 'scp -o StrictHostKeyChecking=no target/*.war deployer@127.0.0.1:C:/Program_Files/Apache_Software_Foundation/Tomcat_8.5/webapps/todo-app/'
+                    bat 'scp -o StrictHostKeyChecking=no target/*.war deployer@192.168.0.2:C:/Program_Files/Apache_Software_Foundation/Tomcat_8.5/webapps/todo-app/'
                 }
             }        
         }
