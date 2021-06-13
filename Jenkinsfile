@@ -13,7 +13,10 @@ stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sq') {
                  
-                  bat 'mvn sonar:sonar -Dsonar.login=a9f1b2f450793f58d6ced555e121235e36e4c0d3 -D.host.url=http://localhost:9000/ ' 
+                  bat 'mvn sonar:sonar \
+  -Dsonar.projectKey=com.mtodo \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=a9f1b2f450793f58d6ced555e121235e36e4c0d3 ' 
                    
                        
                     }
