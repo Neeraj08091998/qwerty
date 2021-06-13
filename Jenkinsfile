@@ -27,7 +27,7 @@ pipeline {
         stage('deloy to tomcat') {
             steps {
                
-                deploy adapters: [tomcat8.5(credentialsid: 'deployer', path: '', url: 'http://localhost:8081')], contextPath: null,war: '**/*.war'
+              sh 'scp -o StrictHostKeyChecking=no target/*.war deployer@127.0.0.1:C:/ProgramFiles/ApacheSoftwareFoundation/Tomcat8.5/webapps/todo-app.war'
                 }
             }        
         }
