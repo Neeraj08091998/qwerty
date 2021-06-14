@@ -24,9 +24,10 @@ pipeline {
 
            
         }
-           stage('Deploy to Tomcat'){
+        stage('Deploy to Tomcat'){steps{
      bat "copy target\\JenkinsWar.war \".war\""}
         }
+    }
                
                 
     }
