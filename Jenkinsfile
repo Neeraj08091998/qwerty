@@ -29,7 +29,7 @@ pipeline {
 
 
         stage('Deploy to Tomcat'){steps{
-     bat "copy target\\todo-app.war \"webapps\.war\""}
+     bat "copy target\\todo-app.war \"webapps/.war\""}
         }
     }
                
