@@ -27,7 +27,7 @@ pipeline {
         stage('deloy to tomcat') {
             steps {
                
-               bat "copy target\\todo.war \".war\"
+               bat "copy target\\todo.war \".war\""
                 }
             }        
         }
