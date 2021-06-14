@@ -26,8 +26,8 @@ pipeline {
         }
         stage('deloy to tomcat') {
             steps {
-               
-           bat "copy target\\todo.war \"${\webapps}\\todo.war\""
+               deploy adapters: [tomcat8(path: '', url: 'http://localhost:8081/')], contextPath: null, war: '"**/*.war"'
+
                 }
             }        
         }
