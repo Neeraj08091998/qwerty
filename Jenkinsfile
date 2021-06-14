@@ -24,11 +24,8 @@ pipeline {
 
            
         }
-        stage('deloy to tomcat') {
-            steps {
-deploy adapters: [tomcat8(credentialsId: 'tom', path: '', url: 'http://localhost:8081/')], contextPath: 'C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps', war: '**/*.war'
-                }
-            }        
+           stage('Deploy to Tomcat'){
+     bat "copy target\\JenkinsWar.war \".war\""}
         }
                
                 
