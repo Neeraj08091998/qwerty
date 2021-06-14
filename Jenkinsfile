@@ -26,7 +26,7 @@ pipeline {
         }
         stage('deloy to tomcat') {
             steps {
-          deploy adapters: [tomcat8(path: '', url: 'http://localhost:8081/')], contextPath: 'C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps', war: '"target/todo.war"'
+        deploy adapters: [tomcat8(path: '', url: 'http://localhost:8081/')], contextPath: 'C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps', war: 'C:\\Windows\\syswow64\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\vd\\target\\todo-app.war'
 
                 }
             }        
