@@ -27,10 +27,15 @@ pipeline {
         
         
 
-
-        stage('Deploy to Tomcat'){steps{
-     bat "copy C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5\\webapps \"todo-app.war\""}
-        }
+    
+    stage ('Deploy-To-Tomcat') {
+            steps {
+           sshagent(['tomcat']) {
+                sh 'scp -o StrictHostKeyChecking=no target/*.war navdeep@127.0.0.1:C:/Program_Files/Apache_Software_Foundation/Tomcat_8.5/webapps/todo-app.war'
+              }      
+           }  
+    }
+ 
     }
                
                 
